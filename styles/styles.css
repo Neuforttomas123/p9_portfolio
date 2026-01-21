@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --neon-pink: #ff007f;
+  --neon-teal: #00ffa3;
+  --text-white: #fff5f7;
+}
+@font-face {
+  font-family: "Futura Std";
+  src: url(../fonts/FuturaStd-Heavy.otf) format("opentype");
+}
+body {
+  font-family: "Futura Std", Arial, sans-serif;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+}
+
+main > aside:nth-of-type(1) {
+  background-color: var(--neon-pink);
+  display: grid;
+  width: 40vw;
+  height: 100vh;
+  grid-template-rows: 33.33% 33.33% 33.33%;
+  color: var(--text-white);
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 5;
+  padding: 10px;
+  text-align: left;
+}
+
+#titulo-abajo {
+  font-size: 38px;
+  text-align: right;
+  font-weight: 600;
+  padding: 15px;
+  align-self: end;
+}
+
+main > aside:nth-of-type(2) {
+  width: 50vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: min-content min-content;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0;
+  padding: 0;
+  background-color: white;
+  margin-left: 10px;
+}
+footer {
+  display: none;
+}
+@media (min-width: 1025px) {
+  footer {
+    width: 10vw;
+    height: 100vh;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: var(--text-white);
+    background-color: #ff007f;
+    padding: 15px;
+    font-size: 1.2rem;
+    display: grid;
+  }
+}
+.item-grid {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.anillos {
+  width: 155px;
+  height: 155px;
+  background-color: var(--neon-pink);
+  border-radius: 50%;
+
+  border: 15px solid var(--neon-pink);
+  box-shadow: 0 0 0 15px var(--neon-teal);
+
+  position: relative;
+  margin-right: 25px;
+  margin-left: 5px;
+}
+
+.anillos2 {
+  width: 155px;
+  height: 155px;
+  background-color: var(--neon-teal);
+  border-radius: 50%;
+
+  border: 15px solid var(--neon-teal);
+  box-shadow: 0 0 0 15px var(--neon-pink);
+
+  position: relative;
+  margin-right: 25px;
+  margin-left: 5px;
+}
+
+.etiqueta {
+  position: absolute;
+  background-color: var(--text-white);
+  padding: 12px 20px;
+  width: 230px;
+  height: 90px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.etiqueta a {
+  color: var(--neon-pink);
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  display: grid;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  body {
+    overflow-y: auto;
+  }
+
+  main {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main > aside:nth-of-type(1) {
+    width: 100%;
+    height: 500px;
+    min-height: 35vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  h1 {
+    font-size: 30px;
+    padding: 0;
+  }
+  h2 {
+    font-size: 30px;
+    line-height: 1.5;
+    padding: 20px 0;
+  }
+
+  #titulo-abajo {
+    font-size: 24px;
+    text-align: right;
+    padding: 0;
+    align-self: flex-end;
+  }
+
+  main > aside:nth-of-type(2) {
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 31px 0;
+    padding: 15px 0;
+    justify-items: center;
+    background-color: white;
+  }
+
+  .item-grid {
+    transform: scale(1);
+  }
+
+  footer {
+    display: block;
+    background-color: var(--neon-pink);
+    color: var(--text-white);
+    width: 100%;
+    align-items: end;
+    padding: 15px;
+    text-align: right;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 600px) {
+  main > aside:nth-of-type(1) {
+    height: 600px;
+    padding: 20px;
+  }
+
+  h1,
+  h2 {
+    font-size: 30px;
+  }
+
+  #titulo-abajo {
+    font-size: 20px;
+  }
+
+  main > aside:nth-of-type(2) {
+    grid-template-columns: 1fr;
+    gap: 65px 0;
+    margin-left: 0;
+    padding: 30px;
+  }
+
+  .item-grid {
+    transform: scale(1.2);
+    width: 100%;
+  }
+
+  .anillos,
+  .anillos2 {
+    width: 140px;
+    height: 140px;
+    margin: 0 10px;
+  }
+
+  .etiqueta {
+    width: 210px;
+    height: 75px;
+  }
+
+  .etiqueta a {
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
